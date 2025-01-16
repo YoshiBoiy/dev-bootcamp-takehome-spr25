@@ -250,6 +250,8 @@ p {
     div::-webkit-scrollbar {
         width: 2px;
     }
+
+    .full-command { display: none; }
 }
 
 @media (max-width: 1150px) {
@@ -276,7 +278,7 @@ p {
     grid-template-areas:
         "hero hero hero hero aside2 aside2"
         "hero hero hero hero aside2 aside2"
-        "hero hero hero hero aside5 aside5"
+        "hero hero hero hero aside2 aside2"
         "hero hero hero hero aside5 aside5"
         "aside3 aside3 aside4 aside4 aside5 aside5 ";
 }
@@ -334,4 +336,32 @@ p {
 
 .grid .item:nth-child(5) {
     grid-area: aside5;
+}
+
+.files {
+    width: 100%;
+    display: grid;
+    gap: 5px;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.file {
+    border: 2px solid #808080;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    transition: .2s;
+    font-size: 16px;
+    color: #c0c0c0;
+}
+
+.file:hover {
+    border-color: #754cb7;
+}
+
+.file p {
+    margin: 0px;
+    display: inline;
 }
