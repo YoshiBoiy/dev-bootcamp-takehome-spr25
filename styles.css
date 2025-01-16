@@ -1,3 +1,337 @@
-/* Your Styles Here */
-body{
+@import url('https://fonts.googleapis.com/css2?family=Figtree&family=PT+Sans&family=Ubuntu&display=swap');
+
+:host {
+    display: block;
+}
+
+span {
+    display: inline;
+    font-size: 2rem;
+    font-weight: medium;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 25px;
+    margin-bottom: -2px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: left;
+    display: inline;
+    font-family: 'Figtree', sans-serif;
+    padding-top: 25px;
+    margin-bottom: -2px;
+}
+
+h3 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    text-align: center;
+    background: -webkit-linear-gradient(#2433ED, #6930C3);
+    background-clip: text;
+    font-family: 'PT Sans', sans-serif;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    padding: 10rem;
+    margin: 0;
+    background-color: #07000C;
+    color: white;
+    font-family: 'DM Mono', monospace;
+}
+
+div::-webkit-scrollbar {
+    width: 0px;
+}
+
+div::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+div::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: #808080;
+}
+
+::-webkit-scrollbar-corner {
+    background: #07000C;
+}
+
+.button {
+    display: inline-block;
+    outline: none;
+    background-color: #2433ED;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    height: 50px;
+    width: 200px;
+    box-shadow: 0 0 20px #999;
+    border-radius: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.matIcon {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 25px;
+    size: 100;
+    transition: 0.5s;
+    top: 4px;
+    right: 4px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    top: -1px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button:active {
+    background-color: #008ae6;
+    box-shadow: 0 0 10px #666;
+    transform: scale(0.9, 0.9);
+}
+
+.arrow {
+    box-sizing: border-box;
+    height: 25px;
+    width: 25px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 1px 1px 0px;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+}
+
+.arrow:hover {
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+}
+
+.full {
+    display: grid;
+    position: relative;
+    place-content: center;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.5rem;
+    background-color: #000d1a;
+    background-image: url('../assets/images/inspiration-geometry.png');
+    background-repeat: repeat;
+}
+
+.card-list {
+    justify-content: center;
+    display: flex;
+    padding-top: 1vw;
+    padding-bottom: 3rem;
+    font-family: 'DM Mono', monospace;
+}
+
+.card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 200px;
+    width: 25%;
+    min-width: 200px;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    border-style: solid;
+    border-color: #3A32E018;
+    border-width: 3px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+    border-color: #5B21B6;
+}
+
+.card:hover~.card {
+    transform: translateX(130px);
+}
+
+.card:not(:first-child) {
+    margin-left: -130px;
+}
+
+.author-name {
+    font-size: large;
+    margin-left: 2rem;
+}
+
+.author-name-prefix {
+    font-style: normal;
+    font-size: large;
+    font-weight: 700;
+    color: #7a7a8c;
+}
+
+.card-header p {
+    font-size: 1rem;
+    line-height: 0;
+    font-weight: 400;
+}
+
+p {
+    color: #c0c0c0;
+}
+
+.card-header p:hover {
+    background: linear-gradient(90deg, #3A32E0, #6930C3);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-header h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.big {
+    font-size: 3rem;
+    font-weight: 900;
+    position: absolute;
+    bottom: -20px;
+}
+
+@media (max-width: 1536px) {
+    body {
+        padding: 5rem;
+    }
+}
+
+@media (max-width: 1350px) {
+    .big {
+        font-size: 2.5rem;
+    }
+
+    div::-webkit-scrollbar {
+        width: 2px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .big {
+        font-size: 3.5vw;
+    }
+}
+
+.grid-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    width: 100%;
+    height: 25rem;
+    display: grid;
+    gap: 1.5vw;
+    padding-top: 1vw;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "hero hero hero hero aside2 aside2"
+        "hero hero hero hero aside2 aside2"
+        "hero hero hero hero aside5 aside5"
+        "hero hero hero hero aside5 aside5"
+        "aside3 aside3 aside4 aside4 aside5 aside5 ";
+}
+
+.item {
+    border: 2px solid #808080;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 2rem;
+    transition: .2s;
+}
+
+.grid .item:nth-child(1) {
+    grid-area: hero;
+    overflow: hidden;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+    min-height: 25rem;
+}
+
+.main-content {
+    overflow: scroll;
+    height: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.grid .item:nth-child(2) {
+    grid-area: aside2;
+}
+
+.grid .item:nth-child(3) {
+    border: 2px dashed #808080;
+    justify-content: center;
+    text-align: center;
+    grid-area: aside3;
+}
+
+.grid .item:nth-child(3):hover {
+    border-color: #5B21B6;
+}
+
+.grid .item:nth-child(4) {
+    border: 2px dashed #808080;
+    justify-content: center;
+    text-align: center;
+    grid-area: aside4;
+}
+
+.grid .item:nth-child(4):hover {
+    border-color: #5B21B6;
+}
+
+.grid .item:nth-child(5) {
+    grid-area: aside5;
 }
